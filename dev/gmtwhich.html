@@ -2,28 +2,29 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>gmtwhich &mdash; GMT 6.4.0 documentation</title>
+  <title>gmtwhich &mdash; GMT 6.5.0 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/togglebutton.css" type="text/css" />
       <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
-      <link rel="stylesheet" href="_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
       <link rel="stylesheet" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
+      <link rel="stylesheet" href="_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
       <link rel="stylesheet" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
       <link rel="stylesheet" href="_static/style.css" type="text/css" />
     <link rel="shortcut icon" href="_static/favicon.png"/>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
         <script src="_static/clipboard.min.js"></script>
         <script src="_static/copybutton.js"></script>
         <script>let toggleHintShow = 'Click to show example script';</script>
@@ -49,14 +50,18 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="index.html" class="icon icon-home"> GMT
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            GMT
           </a>
               <div class="version">
-                6.4
+                6.5
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -93,7 +98,7 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Development</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CODE_OF_CONDUCT.md">Code of Conduct</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/.github/blob/main/CODE_OF_CONDUCT.md">Code of Conduct</a></li>
 <li class="toctree-l1"><a class="reference internal" href="devdocs/contributing.html">Contributors Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="devdocs/maintenance.html">Maintainers Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="devdocs/team.html">Team Gallery</a></li>
@@ -135,9 +140,9 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="modules.html">Modules</a> &raquo;</li>
-      <li>gmtwhich</li>
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">Modules</a></li>
+      <li class="breadcrumb-item active">gmtwhich</li>
       <li class="wy-breadcrumbs-aside">
               <a href="https://github.com/GenericMappingTools/gmt/edit/master/doc/rst/source/gmtwhich.rst" class="fa fa-github"> Edit on GitHub</a>
       </li>
@@ -196,8 +201,9 @@ the files.</p>
 </dl>
 <dl class="simple" id="g">
 <dt><strong>-G</strong>[<strong>a</strong>|<strong>c</strong>|<strong>l</strong>|<strong>u</strong>]</dt><dd><p>If a file argument is a downloadable file (either a complete URL, a &#64;file for
-downloading from the GMT data server, or &#64;earth_relief_xxy) we will try
-to download the file if it is not found in your local data or cache dirs.
+downloading from the GMT data server, or &#64;earth_relief_xxy or any other of the
+remote datasets at <a class="reference external" href="https://www.generic-mapping-tools.org/remote-datasets/">https://www.generic-mapping-tools.org/remote-datasets/</a>)
+we will try to download the file if it is not found in your local data or cache dirs.
 By default [<strong>-Gl</strong>] we download to the current directory. Append <strong>a</strong> to
 place files in the appropriate folder under the user directory (this is where
 GMT normally places downloaded files), <strong>c</strong> to place it in the user cache directory,
@@ -224,17 +230,17 @@ any module-specific option (but not the GMT common options), then exit.</p>
 <section id="examples">
 <h2>Examples<a class="headerlink" href="#examples" title="Permalink to this heading">¶</a></h2>
 <p>To see the path to the file myjunk.txt, use:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt which myjunk.txt
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>which<span class="w"> </span>myjunk.txt
 </pre></div>
 </div>
 <p>To download the 10 arc-minute global relief file from the GMT data server, use:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt which -Ga @earth_relief_10m
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>which<span class="w"> </span>-Ga<span class="w"> </span>@earth_relief_10m
 </pre></div>
 </div>
 <p>which will print the path (after downloading if not already present).  The file will
 be placed in the appropriate folder under the user’s GMT_USERDIR.  To obtain a GMT
 example or test file from the GMT data server, try:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt which -Gc @hotspots.txt
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>which<span class="w"> </span>-Gc<span class="w"> </span>@hotspots.txt
 </pre></div>
 </div>
 <p>which will print the path (after downloading if not already present).  The file will
@@ -257,8 +263,8 @@ be placed in the user’s GMT_CACHEDIR directory.</p>
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2022, The GMT Team.
-      <span class="lastupdated">Last updated on Jun 14, 2022.
+    <p>&#169; Copyright 2023, The GMT Team.
+      <span class="lastupdated">Last updated on Jun 10, 2023.
       </span></p>
   </div>
 

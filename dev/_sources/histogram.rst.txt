@@ -12,8 +12,8 @@ Synopsis
 
 .. include:: common_SYN_OPTs.rst_
 
-**gmt histogram** [ *table* ] |-J|\ **x**\|\ **X**\ *parameters*
-|-T|\ [*min/max*\ /]\ *inc*\ [**+i**\|\ **n**] \|\ |-T|\ *file*\|\ *list*
+**gmt histogram** [ *table* ]
+|-T|\ [*min/max*\ /]\ *inc*\ [**+i**\|\ **n**] \| |-T|\ *file*\|\ *list*
 [ |-A| ]
 [ |SYN_OPT-B| ]
 [ |-C|\ *cpt*\ [**+b**] ]
@@ -22,6 +22,7 @@ Synopsis
 [ |-F| ]
 [ |-G|\ *fill* ]
 [ |-I|\ [**o**\|\ **O**] ]
+[ |-J|\ **x**\|\ **X**\ *parameters* ]
 [ |-Jz|\ \|\ **Z**\ *parameters* ]
 [ |-L|\ **l**\|\ **h**\|\ **b** ]
 [ |-N|\ [*mode*][**+p**\ *pen*] ]
@@ -69,14 +70,14 @@ Required Arguments
 
 **-Jx**
     *xscale*\ [/*yscale*] (Linear scale(s) in distance unit/data unit), or
-    **-JX** with *width*\ [/*height*] dimensions.
+    **-JX** with *width*\ [/*height*] dimensions.  **Note**: Optional in modern mode.
 
 .. _-T:
 
 **-T**\ [*min/max*\ /]\ *inc*\ [**+n**] \|\ **-T**\ *file*\|\ *list*
     Make evenly spaced array of bin boundaries from *min* to *max* by *inc*.
     If *min/max* are not given then we default to the range in |-R|.
-    For details on array creation, see `Generate 1D Array`_. **Note**: If
+    For details on array creation, see `Generate 1-D Array`_. **Note**: If
     *inc* is given with a trailing time unit then it takes precedence over
     the current setting of :term:`TIME_UNIT`; otherwise that setting determines
     the units used for the bin widths.
@@ -277,9 +278,9 @@ Examples
 To draw a histogram of the remote data v3206_06.txt containing seafloor depths,
 using a 250 meter bin width, center bars, and draw bar outline, use:
 
-   ::
+::
 
-    gmt histogram  @v3206_06.txt -F -T250 -W0.25p -B -pdf plot
+  gmt histogram  @v3206_06.txt -F -T250 -W0.25p -B -pdf plot
 
 If you know the distribution of your data, you may explicitly specify
 range and scales. E.g., to plot a histogram of the y-values (2nd column)
@@ -287,11 +288,11 @@ in the file errors.xy using a 1 meter bin width, plot from -10 to +10
 meters @ 0.75 cm/m and 0.01c/count in y, annotate every 2 m and 100 counts,
 and use black bars, run:
 
-   ::
+::
 
-    gmt begin plot
-      gmt histogram errors.xy -T1 -R-10/10/0/0 -Jx0.75c/0.01c -Bx2+lError -By100+lCounts -Gblack -i1
-    gmt end show
+  gmt begin plot
+    gmt histogram errors.xy -T1 -R-10/10/0/0 -Jx0.75c/0.01c -Bx2+lError -By100+lCounts -Gblack -i1
+  gmt end show
 
 Since no y-range was specified, **histogram** will calculate *ymax* in even
 increments of 100.

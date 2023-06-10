@@ -2,28 +2,29 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>dimfilter &mdash; GMT 6.4.0 documentation</title>
+  <title>dimfilter &mdash; GMT 6.5.0 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/togglebutton.css" type="text/css" />
       <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
-      <link rel="stylesheet" href="_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
       <link rel="stylesheet" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
+      <link rel="stylesheet" href="_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
       <link rel="stylesheet" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
       <link rel="stylesheet" href="_static/style.css" type="text/css" />
     <link rel="shortcut icon" href="_static/favicon.png"/>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
         <script src="_static/clipboard.min.js"></script>
         <script src="_static/copybutton.js"></script>
         <script>let toggleHintShow = 'Click to show example script';</script>
@@ -49,14 +50,18 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="index.html" class="icon icon-home"> GMT
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            GMT
           </a>
               <div class="version">
-                6.4
+                6.5
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -93,7 +98,7 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Development</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CODE_OF_CONDUCT.md">Code of Conduct</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/.github/blob/main/CODE_OF_CONDUCT.md">Code of Conduct</a></li>
 <li class="toctree-l1"><a class="reference internal" href="devdocs/contributing.html">Contributors Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="devdocs/maintenance.html">Maintainers Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="devdocs/team.html">Team Gallery</a></li>
@@ -135,9 +140,9 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="modules.html">Modules</a> &raquo;</li>
-      <li>dimfilter</li>
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">Modules</a></li>
+      <li class="breadcrumb-item active">dimfilter</li>
       <li class="wy-breadcrumbs-aside">
               <a href="https://github.com/GenericMappingTools/gmt/edit/master/doc/rst/source/dimfilter.rst" class="fa fa-github"> Edit on GitHub</a>
       </li>
@@ -153,7 +158,7 @@
 <section id="synopsis">
 <h2>Synopsis<a class="headerlink" href="#synopsis" title="Permalink to this heading">¶</a></h2>
 <p><strong>gmt dimfilter</strong> <em>ingrid</em>
-<a class="reference internal" href="#d"><span><strong>-D</strong></span></a></strong><em>0-4</em>
+<a class="reference internal" href="#d"><span><strong>-D</strong></span></a></strong><em>flag</em>
 <a class="reference internal" href="#f"><span><strong>-F</strong></span></a></strong><strong>x</strong><em>width</em>[<em>modifier</em>]
 <a class="reference internal" href="#g"><span><strong>-G</strong></span></a></strong><em>outgrid</em>
 <a class="reference internal" href="#n"><span><strong>-N</strong></span></a></strong><strong>x</strong><em>sectors</em>[<em>modifier</em>]
@@ -175,7 +180,7 @@ dividing the given filter circle into <em>n_sectors</em>, applying one of the
 selected primary convolution or non-convolution filters to each sector,
 and choosing the final outcome according to the selected secondary
 filter. It computes distances using Cartesian or Spherical geometries.
-The output <em>.nc</em> file can optionally be generated as a subregion of the
+The output gridfile can optionally be generated as a subregion of the
 input and/or with a new <strong>-I</strong>ncrement. In this way, one may have
 “extra space” in the input data so that there will be no edge effects
 for the output grid. If the filter is low-pass, then the output may be
@@ -183,7 +188,7 @@ less frequently sampled than the input. The <a class="reference internal" href="
 mode and expects the input file to contains the filtered depths. Finally, one should know that
 <strong>dimfilter</strong> will not produce a smooth output as other spatial filters
 do because it returns a minimum median out of <em>N</em> medians of <em>N</em>
-sectors. The output can be rough unless the input data is noise-free.
+sectors. The output can be rough unless the input data are noise-free.
 Thus, an additional filtering (e.g., Gaussian via <a class="reference internal" href="grdfilter.html"><span class="doc">grdfilter</span></a>) of the
 DiM-filtered data is generally recommended.</p>
 </section>
@@ -279,7 +284,7 @@ automatic scaling to preserve precision for integer grids [Default
 is 1].</p></li>
 </ul>
 </div></blockquote>
-<p>Note: Any offset is added before any scaling. <strong>+sa</strong> also sets <strong>+oa</strong>
+<p><strong>Note</strong>: Any offset is added before any scaling. <strong>+sa</strong> also sets <strong>+oa</strong>
 (unless overridden). To write specific formats via GDAL, use =<em>gd</em>
 and supply <em>driver</em> (and optionally <em>dataType</em>) and/or one or more
 concatenated GDAL <strong>-co</strong> options using <strong>+c</strong>. See
@@ -292,19 +297,19 @@ for more details.</p>
 <dl class="simple" id="i">
 <dt><strong>-I</strong></dt><dd><p><em>x_inc</em> [and optionally <em>y_inc</em>] is the output Increment. Append
 <strong>m</strong> to indicate minutes, or <strong>c</strong> to indicate seconds. If the new
-<em>x_inc</em>, <em>y_inc</em> are NOT integer multiples of the old ones (in the
+<em>x_inc</em>, <em>y_inc</em> are <strong>not</strong> integer multiples of the old ones (in the
 input data), filtering will be considerably slower. [Default: Same
 as input.]</p>
 </dd>
 </dl>
 <dl class="simple" id="l">
-<dt><strong>-L</strong></dt><dd><p>This option is used by itself to write the dim.template.sh bash script
+<dt><strong>-L</strong></dt><dd><p>This option is used by itself to write the <em>dim.template.sh</em> bash script
 to standard output.  No other options can be used in combination.</p>
 </dd>
 </dl>
 <dl class="simple" id="r">
 <dt><strong>-R</strong></dt><dd><p><em>west</em>, <em>east</em>, <em>south</em>, and <em>north</em> defines the Region of the
-output points. [Default: Same as input.]</p>
+output grid. [Default: Same as input.]</p>
 </dd>
 </dl>
 <dl class="simple" id="t">
@@ -374,38 +379,32 @@ the output values every 0.5 degree. To prevent the medians from being
 biased by the sloping plane, you want to divide the filter circle into 6
 sectors and to choose the lowest value among 6 medians. Using spherical
 distance calculations, you need:</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt dimfilter @earth_relief_05m -Gfiltered_pacific.nc -Fm600 -D4 -Nl6 -R150/250/10/40 -I0.5 -V
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>dimfilter<span class="w"> </span>@earth_relief_05m<span class="w"> </span>-Gfiltered_pacific.nc<span class="w"> </span>-Fm600<span class="w"> </span>-D4<span class="w"> </span>-Nl6<span class="w"> </span>-R150/250/10/40<span class="w"> </span>-I0.5<span class="w"> </span>-V
 </pre></div>
 </div>
-</div></blockquote>
 <p>Suppose that cape_verde.nc is a file of 0.5 minute bathymetry from 32W
 to 15W and 8N to 25N, and you want to remove small-length-scale features
 in order to define a swell in an area extending from 27.5W to 20.5W and
 12.5N to 19.5N, and you want the output value every 2 minute. Using
 cartesian distance calculations, you need:</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt dimfilter cape_verde.nc -Gt.nc -Fm220 -Nl8 -D2 -R-27.5/-20.5/12.5/19.5 -I2m -V
-gmt grdfilter t.nc -Gcape_swell.nc -Fg50 -D2 -V
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>dimfilter<span class="w"> </span>cape_verde.nc<span class="w"> </span>-Gt.nc<span class="w"> </span>-Fm220<span class="w"> </span>-Nl8<span class="w"> </span>-D2<span class="w"> </span>-R-27.5/-20.5/12.5/19.5<span class="w"> </span>-I2m<span class="w"> </span>-V
+gmt<span class="w"> </span>grdfilter<span class="w"> </span>t.nc<span class="w"> </span>-Gcape_swell.nc<span class="w"> </span>-Fg50<span class="w"> </span>-D2<span class="w"> </span>-V
 </pre></div>
 </div>
-</div></blockquote>
 <p>Suppose that you found a range of filter widths for a given area, and
 you filtered the given bathymetric data using the range of filter widths
 (e.g., <em>f100.nc f110.nc f120.nc f130.nc</em>), and you want to define a
 regional trend using the range of filter widths, and you want to obtain
 median absolute deviation (MAD) estimates at each data point. Then, you
 will need to do:</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grd2xyz f100.nc -Z &gt; f100.txt
-gmt grd2xyz f110.nc -Z &gt; f110.txt
-gmt grd2xyz f120.nc -Z &gt; f120.txt
-gmt grd2xyz f130.nc -Z &gt; f130.txt
-paste f100.txt f110.txt f120.txt f130.txt &gt; depths.txt
-gmt dimfilter depths.txt -Q &gt; output.z
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>grd2xyz<span class="w"> </span>f100.nc<span class="w"> </span>-Z<span class="w"> </span>&gt;<span class="w"> </span>f100.txt
+gmt<span class="w"> </span>grd2xyz<span class="w"> </span>f110.nc<span class="w"> </span>-Z<span class="w"> </span>&gt;<span class="w"> </span>f110.txt
+gmt<span class="w"> </span>grd2xyz<span class="w"> </span>f120.nc<span class="w"> </span>-Z<span class="w"> </span>&gt;<span class="w"> </span>f120.txt
+gmt<span class="w"> </span>grd2xyz<span class="w"> </span>f130.nc<span class="w"> </span>-Z<span class="w"> </span>&gt;<span class="w"> </span>f130.txt
+paste<span class="w"> </span>f100.txt<span class="w"> </span>f110.txt<span class="w"> </span>f120.txt<span class="w"> </span>f130.txt<span class="w"> </span>&gt;<span class="w"> </span>depths.txt
+gmt<span class="w"> </span>dimfilter<span class="w"> </span>depths.txt<span class="w"> </span>-Q<span class="w"> </span>&gt;<span class="w"> </span>output.z
 </pre></div>
 </div>
-</div></blockquote>
 </section>
 <section id="limitations">
 <h2>Limitations<a class="headerlink" href="#limitations" title="Permalink to this heading">¶</a></h2>
@@ -449,8 +448,8 @@ Geosyst.</em>, <strong>9</strong>, Q03005, <a class="reference external" href="h
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2022, The GMT Team.
-      <span class="lastupdated">Last updated on Jun 14, 2022.
+    <p>&#169; Copyright 2023, The GMT Team.
+      <span class="lastupdated">Last updated on Jun 10, 2023.
       </span></p>
   </div>
 

@@ -2,28 +2,29 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>gmtconvert &mdash; GMT 6.4.0 documentation</title>
+  <title>gmtconvert &mdash; GMT 6.5.0 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/togglebutton.css" type="text/css" />
       <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
-      <link rel="stylesheet" href="_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
       <link rel="stylesheet" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
+      <link rel="stylesheet" href="_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
       <link rel="stylesheet" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
       <link rel="stylesheet" href="_static/style.css" type="text/css" />
     <link rel="shortcut icon" href="_static/favicon.png"/>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
         <script src="_static/clipboard.min.js"></script>
         <script src="_static/copybutton.js"></script>
         <script>let toggleHintShow = 'Click to show example script';</script>
@@ -49,14 +50,18 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="index.html" class="icon icon-home"> GMT
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            GMT
           </a>
               <div class="version">
-                6.4
+                6.5
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -93,7 +98,7 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Development</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CODE_OF_CONDUCT.md">Code of Conduct</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/.github/blob/main/CODE_OF_CONDUCT.md">Code of Conduct</a></li>
 <li class="toctree-l1"><a class="reference internal" href="devdocs/contributing.html">Contributors Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="devdocs/maintenance.html">Maintainers Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="devdocs/team.html">Team Gallery</a></li>
@@ -135,9 +140,9 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="modules.html">Modules</a> &raquo;</li>
-      <li>gmtconvert</li>
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">Modules</a></li>
+      <li class="breadcrumb-item active">gmtconvert</li>
       <li class="wy-breadcrumbs-aside">
               <a href="https://github.com/GenericMappingTools/gmt/edit/master/doc/rst/source/gmtconvert.rst" class="fa fa-github"> Edit on GitHub</a>
       </li>
@@ -166,6 +171,7 @@
 [ <a class="reference internal" href="#t"><span><strong>-T</strong></span></a></strong>[<strong>h</strong>][<strong>d</strong>[[<strong>~</strong>]<em>selection</em>]] ]
 [ <a class="reference internal" href="#v"><span><strong>-V</strong></span></a></strong>[<em>level</em>] ]
 [ <a class="reference internal" href="#w"><span><strong>-W</strong></span></a></strong>[<strong>+n</strong>] ]
+[ <a class="reference internal" href="#z"><span><strong>-Z</strong></span></a></strong> ]
 [ <strong>-a</strong><a class="reference internal" href="gmt.html#aspatial-full"><span class="std std-ref">flags</span></a> ]
 [ <strong>-b</strong><a class="reference internal" href="gmt.html#bi-full"><span class="std std-ref">binary</span></a> ]
 [ <strong>-d</strong><a class="reference internal" href="gmt.html#d-full"><span class="std std-ref">nodata</span></a>[<strong>+c</strong><em>col</em>] ]
@@ -210,8 +216,8 @@ then we read from standard input.  </p>
 <dl class="simple" id="a">
 <dt><strong>-A</strong></dt><dd><p>The records from the input files should be pasted horizontally, not
 appended vertically [Default]. All files must have the same number
-of segments and number of rows per segment. Note for binary input,
-all the files you want to paste must have the same number of columns
+of segments and number of rows per segment. <strong>Note</strong>: For binary input,
+all the files you want to paste must have the <em>same</em> number of columns
 (as set with <strong>-bi</strong>); ASCII tables can have different number of columns.</p>
 </dd>
 </dl>
@@ -227,8 +233,9 @@ given range will be output.</p>
 <dl class="simple" id="d">
 <dt><strong>-D</strong>[<em>template</em>[<strong>+o</strong><em>orig</em>]]</dt><dd><p>For multiple segment data, dump each segment to a separate output
 file [Default writes a multiple segment file to standard output]. Append a
-format template for the individual file names; this template
-<strong>must</strong> contain a C format specifier that can format an integer
+format template for the individual file names; this template <strong>must</strong>
+contain a C language <a class="reference external" href="https://en.wikipedia.org/wiki/Printf_format_string">printf</a>
+format specifier that can format an integer
 argument (the running segment number across all tables); this is
 usually %d but could be %08d which gives leading zeros, etc.
 [Default is gmtconvert_segment_%d.{txt|bin}, depending on
@@ -247,7 +254,9 @@ the <em>template</em> is used.</p>
 [Default extracts all records]. Optionally, append <strong>f</strong> or <strong>l</strong> to
 only extract the first or last record of each segment, respectively.
 Alternatively, append <strong>m</strong><em>stride</em> to extract every <em>stride</em> records;
-use <strong>M</strong> to also include the last record.</p>
+use <strong>M</strong> to also include the last record if not on the stride. <strong>Note</strong>: This option operates
+on the input records and if combined with <a class="reference internal" href="#n"><span><strong>-N</strong></span></a></strong> the latter only sorts
+the reduced data set. See <strong>-qo</strong> for limiting the output records after sorting.</p>
 </dd>
 </dl>
 <dl class="simple" id="f">
@@ -291,7 +300,9 @@ The data records will be sorted such that the chosen column will
 fall into ascending order [<strong>+a</strong>, which is Default].  Append <strong>+d</strong>
 to sort into descending order instead.  The <a class="reference internal" href="#n"><span><strong>-N</strong></span></a></strong> option can be
 combined with any other ordering scheme except <a class="reference internal" href="#f"><span><strong>-F</strong></span></a></strong> (segmentation)
-and is applied at the end.</p>
+and is applied at the end. <strong>Note</strong>: If <a class="reference internal" href="#e"><span><strong>-E</strong></span></a></strong> is used then be aware its effect
+is applied <em>before</em> the sorting, not after.  For limiting the output
+of records after sorting, see <strong>qo</strong>.</p>
 </dd>
 </dl>
 <dl class="simple" id="q">
@@ -311,7 +322,7 @@ segments whose headers do <em>not</em> contain the specified pattern, use
 <strong>-S~</strong>. Should your pattern happen to start with ~ you need to
 escape this character with a backslash [Default output all
 segments]. Cannot be used with <a class="reference internal" href="#q"><span><strong>-Q</strong></span></a></strong>. For matching segments based
-on aspatial values (via OGR/GMT format), give the search string as
+on aspatial values (via <a class="reference internal" href="cookbook/ogrgmt-format.html#ogr-compat"><span class="std std-ref">OGR/GMT</span></a> format), give the search string as
 <em>varname</em>=<em>value</em> and we will compare <em>value</em> against the value
 of <em>varname</em> for each segment. <strong>Note</strong>: If the features are polygons
 then a match of a particular polygon perimeter also means that any
@@ -349,6 +360,13 @@ such values to the numerical output columns.  Text that cannot be converted
 (because they are not numbers) will appear as NaNs.  Use modifier <strong>+n</strong> to
 exclude the columns with NaNs.  <strong>Note</strong>: These columns are identified based on
 the first input record only.</p>
+</dd>
+</dl>
+<dl class="simple" id="z">
+<dt><strong>-Z</strong></dt><dd><p>Transpose the single segment in a dataset. Any trailing text will be lost.
+<strong>Note</strong>: If you are using binary tables then add <a class="reference internal" href="#v"><span><strong>-V</strong></span></a></strong> to have the dimensions
+of the transposed table reported since you will need to specify <strong>-bi</strong><em>ncols</em>
+when reading the binary transposed table.</p>
 </dd>
 </dl>
 <dl class="simple">
@@ -440,87 +458,88 @@ can be cut and pasted into your terminal for testing.
 Other commands requiring input files are just dummy examples of the types
 of uses that are common but cannot be run verbatim as written.</p>
 <p>To convert the binary file test.b (single precision) with 4 columns to ASCII:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt convert test.b -bi4f &gt; test.dat
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>convert<span class="w"> </span>test.b<span class="w"> </span>-bi4f<span class="w"> </span>&gt;<span class="w"> </span>test.dat
 </pre></div>
 </div>
 <p>To convert the multiple segment ASCII table test.txt to a double precision binary file:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt convert test.txt -bo &gt; test.b
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>convert<span class="w"> </span>test.txt<span class="w"> </span>-bo<span class="w"> </span>&gt;<span class="w"> </span>test.b
 </pre></div>
 </div>
 <p>You have an ASCII table with 6 columns and you want to plot column 5 versus column 0. Try:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt convert table.txt -o5,0 <span class="p">|</span> gmt plot ...
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>convert<span class="w"> </span>table.txt<span class="w"> </span>-o5,0<span class="w"> </span><span class="p">|</span><span class="w"> </span>gmt<span class="w"> </span>plot<span class="w"> </span>...
 </pre></div>
 </div>
 <p>If the file instead is the binary file results.b which has 9
 single-precision values per record, we extract the last column and
 columns 4-6 and write ASCII with the command:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt convert results.b -o8,4-6 -bi9s <span class="p">|</span> gmt plot ...
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>convert<span class="w"> </span>results.b<span class="w"> </span>-o8,4-6<span class="w"> </span>-bi9s<span class="w"> </span><span class="p">|</span><span class="w"> </span>gmt<span class="w"> </span>plot<span class="w"> </span>...
 </pre></div>
 </div>
 <p>You want to plot the 2nd column of a 2-column file left.txt versus the
 first column of a file right.txt:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt convert left.txt right.txt -A -o1,2 <span class="p">|</span> gmt plot ...
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>convert<span class="w"> </span>left.txt<span class="w"> </span>right.txt<span class="w"> </span>-A<span class="w"> </span>-o1,2<span class="w"> </span><span class="p">|</span><span class="w"> </span>gmt<span class="w"> </span>plot<span class="w"> </span>...
 </pre></div>
 </div>
 <p>To extract all segments in the file big_file.txt whose headers contain
 the string “RIDGE AXIS”, try:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt convert big_file.txt -S<span class="s2">&quot;RIDGE AXIS&quot;</span> &gt; subset.txt
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>convert<span class="w"> </span>big_file.txt<span class="w"> </span>-S<span class="s2">&quot;RIDGE AXIS&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>subset.txt
 </pre></div>
 </div>
 <p>To only get the segments in the file big_file.txt whose headers exactly
 matches the string “Spitsbergen”, try:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt convert big_file.txt -SSpitsbergen+e &gt; subset.txt
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>convert<span class="w"> </span>big_file.txt<span class="w"> </span>-SSpitsbergen+e<span class="w"> </span>&gt;<span class="w"> </span>subset.txt
 </pre></div>
 </div>
 <p>To invert the selection of segments whose headers begin with “profile ”
 followed by an integer number and any letter between “g” and “l”, try:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt convert -S~<span class="s2">&quot;/^profile [0-9]+[g-l]</span>$<span class="s2">/&quot;</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>convert<span class="w"> </span>-S~<span class="s2">&quot;/^profile [0-9]+[g-l]</span>$<span class="s2">/&quot;</span>
 </pre></div>
 </div>
 <p>To reverse the order of segments in a file without reversing the order
 of records within each segment, try:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt convert lots_of_segments.txt -Is &gt; last_segment_first.txt
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>convert<span class="w"> </span>lots_of_segments.txt<span class="w"> </span>-Is<span class="w"> </span>&gt;<span class="w"> </span>last_segment_first.txt
 </pre></div>
 </div>
 <p>To extract segments 20 to 40 in steps of 2, plus segment 0 in a file, try:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt convert lots_of_segments.txt -Q0,20:2:40 &gt; my_segments.txt
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>convert<span class="w"> </span>lots_of_segments.txt<span class="w"> </span>-Q0,20:2:40<span class="w"> </span>&gt;<span class="w"> </span>my_segments.txt
 </pre></div>
 </div>
-<p>To extract the attribute ELEVATION from an ogr gmt file like this:</p>
+<p>To extract the attribute ELEVATION from an <a class="reference internal" href="cookbook/ogrgmt-format.html#ogr-compat"><span class="std std-ref">OGR/GMT</span></a> format
+file like this:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># @VGMT1.0 @GPOINT</span>
 ...
 <span class="c1"># @NELEVATION|DISPX|DISPY</span>
 <span class="c1"># @Tdouble|double|double</span>
 <span class="c1"># FEATURE_DATA</span>
 <span class="c1"># @D4.945000|-106500.00000000|-32700.00000000</span>
--9.36890245902635 <span class="m">39</span>.367156766570389
+-9.36890245902635<span class="w"> </span><span class="m">39</span>.367156766570389
 </pre></div>
 </div>
 <p>do:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt convert file.gmt -a2<span class="o">=</span>ELEVATION &gt; xyz.dat
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>convert<span class="w"> </span>file.gmt<span class="w"> </span>-a2<span class="o">=</span>ELEVATION<span class="w"> </span>&gt;<span class="w"> </span>xyz.dat
 </pre></div>
 </div>
 <p>or just:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt convert file.gmt -aELEVATION &gt; xyz.dat
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>convert<span class="w"> </span>file.gmt<span class="w"> </span>-aELEVATION<span class="w"> </span>&gt;<span class="w"> </span>xyz.dat
 </pre></div>
 </div>
 <p>To connect all points in the file sensors.txt with the specified origin
 at 23.5/19, try:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt convert sensors.txt -F23.5/19 &gt; lines.txt
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>convert<span class="w"> </span>sensors.txt<span class="w"> </span>-F23.5/19<span class="w"> </span>&gt;<span class="w"> </span>lines.txt
 </pre></div>
 </div>
 <p>To write all segments in the two files A.txt and B.txt to
 individual files named profile_005000.txt, profile_005001.txt, etc.,
 where we reset the origin of the sequential numbering from 0 to 5000, try:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt convert A.txt B.txt -Dprofile_%6.6d.txt+o5000
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>convert<span class="w"> </span>A.txt<span class="w"> </span>B.txt<span class="w"> </span>-Dprofile_%6.6d.txt+o5000
 </pre></div>
 </div>
 <p>To only read rows 100-200 and 500-600 from file junk.txt, try:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt convert junk.txt -q100-200,500-600 &gt; subset.txt
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>convert<span class="w"> </span>junk.txt<span class="w"> </span>-q100-200,500-600<span class="w"> </span>&gt;<span class="w"> </span>subset.txt
 </pre></div>
 </div>
 <p>To get all rows except those bad ones between rows 1000-2000, try:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt convert junk.txt -q~1000-2000 &gt; good.txt
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>convert<span class="w"> </span>junk.txt<span class="w"> </span>-q~1000-2000<span class="w"> </span>&gt;<span class="w"> </span>good.txt
 </pre></div>
 </div>
 </section>
@@ -543,8 +562,8 @@ where we reset the origin of the sequential numbering from 0 to 5000, try:</p>
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2022, The GMT Team.
-      <span class="lastupdated">Last updated on Jun 14, 2022.
+    <p>&#169; Copyright 2023, The GMT Team.
+      <span class="lastupdated">Last updated on Jun 10, 2023.
       </span></p>
   </div>
 

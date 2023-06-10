@@ -2,28 +2,29 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>grdfilter &mdash; GMT 6.4.0 documentation</title>
+  <title>grdfilter &mdash; GMT 6.5.0 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/togglebutton.css" type="text/css" />
       <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
-      <link rel="stylesheet" href="_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
       <link rel="stylesheet" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
+      <link rel="stylesheet" href="_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
       <link rel="stylesheet" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
       <link rel="stylesheet" href="_static/style.css" type="text/css" />
     <link rel="shortcut icon" href="_static/favicon.png"/>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
         <script src="_static/clipboard.min.js"></script>
         <script src="_static/copybutton.js"></script>
         <script>let toggleHintShow = 'Click to show example script';</script>
@@ -49,14 +50,18 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="index.html" class="icon icon-home"> GMT
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            GMT
           </a>
               <div class="version">
-                6.4
+                6.5
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -93,7 +98,7 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Development</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CODE_OF_CONDUCT.md">Code of Conduct</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/.github/blob/main/CODE_OF_CONDUCT.md">Code of Conduct</a></li>
 <li class="toctree-l1"><a class="reference internal" href="devdocs/contributing.html">Contributors Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="devdocs/maintenance.html">Maintainers Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="devdocs/team.html">Team Gallery</a></li>
@@ -135,9 +140,9 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="modules.html">Modules</a> &raquo;</li>
-      <li>grdfilter</li>
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">Modules</a></li>
+      <li class="breadcrumb-item active">grdfilter</li>
       <li class="wy-breadcrumbs-aside">
               <a href="https://github.com/GenericMappingTools/gmt/edit/master/doc/rst/source/grdfilter.rst" class="fa fa-github"> Edit on GitHub</a>
       </li>
@@ -176,7 +181,7 @@ registration (via <a class="reference internal" href="#t"><span><strong>-T</stro
 the input data so that the edges will not be used and the output can be
 within one half-width of the input edges. If the filter is low-pass,
 then the output may be less frequently sampled than the input.  <strong>Note</strong>:
-For filtering in the frequency (or wavenumber) domain instead, see doc:<cite>grdfft</cite>.</p>
+For filtering in the frequency (or wavenumber) domain instead, see <a class="reference internal" href="grdfft.html"><span class="doc">grdfft</span></a>.</p>
 </section>
 <section id="required-arguments">
 <h2>Required Arguments<a class="headerlink" href="#required-arguments" title="Permalink to this heading">¶</a></h2>
@@ -205,7 +210,7 @@ follows:</p>
 <li><p><em>flag</em> = p: grid (px,py) with <em>width</em> an odd number of pixels;
 Cartesian distances.</p></li>
 <li><p><em>flag</em> = 0: grid (x,y) same units as <em>width</em>, Cartesian distances.</p></li>
-<li><p><em>flag</em> = 1: grid (x,y) in degrees, <em>width</em> in kilometers, Cartesian
+<li><p><em>flag</em> = 1: grid (x,y) in degrees, <em>width</em> in km, Cartesian
 distances.</p></li>
 <li><p><em>flag</em> = 2: grid (x,y) in degrees, <em>width</em> in km, dx scaled by
 cos(middle y), Cartesian distances.</p></li>
@@ -290,7 +295,7 @@ automatic scaling to preserve precision for integer grids [Default
 is 1].</p></li>
 </ul>
 </div></blockquote>
-<p>Note: Any offset is added before any scaling. <strong>+sa</strong> also sets <strong>+oa</strong>
+<p><strong>Note</strong>: Any offset is added before any scaling. <strong>+sa</strong> also sets <strong>+oa</strong>
 (unless overridden). To write specific formats via GDAL, use =<em>gd</em>
 and supply <em>driver</em> (and optionally <em>dataType</em>) and/or one or more
 concatenated GDAL <strong>-co</strong> options using <strong>+c</strong>. See
@@ -404,33 +409,27 @@ values within a 300km radius (600km full width) of the output points,
 which you choose to be from 150E to 250E and 10N to 40N, and you want
 the output values every 0.5 degree. Using spherical distance
 calculations, you need:</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdfilter @earth_relief_05m -Gfiltered_pacific.nc -Fm600 -D4 -R150/250/10/40 -I0.5 -V
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>grdfilter<span class="w"> </span>@earth_relief_05m<span class="w"> </span>-Gfiltered_pacific.nc<span class="w"> </span>-Fm600<span class="w"> </span>-D4<span class="w"> </span>-R150/250/10/40<span class="w"> </span>-I0.5<span class="w"> </span>-V
 </pre></div>
 </div>
-</div></blockquote>
 <p>If we instead wanted a high-pass result then one can perform the
 corresponding low-pass filter using a coarse grid interval as <strong>grdfilter</strong>
 will resample the result to the same resolution as the input grid so we
 can compute the residuals, e.g.,</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdfilter @earth_relief_05m -Gresidual_pacific.nc -Fm600+h -D4 -R150/250/10/40 -I0.5 -V
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>grdfilter<span class="w"> </span>@earth_relief_05m<span class="w"> </span>-Gresidual_pacific.nc<span class="w"> </span>-Fm600+h<span class="w"> </span>-D4<span class="w"> </span>-R150/250/10/40<span class="w"> </span>-I0.5<span class="w"> </span>-V
 </pre></div>
 </div>
-</div></blockquote>
 <p>Here, the residual_pacific.nc grid will have the same 5 minute
 resolution as the original.</p>
 <p>To filter the dataset in ripples.nc using a custom anisotropic Gaussian
 filter exp (-0.5*r^2) whose distances r from the center is given by
 (2x^2 + y^2 -2xy)/6, with major axis at an angle of 63 degrees with the
 horizontal, try</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdmath -R-10/10/-10/10 -I1 X <span class="m">2</span> POW <span class="m">2</span> MUL Y <span class="m">2</span> POW ADD X Y MUL <span class="m">2</span> MUL <span class="se">\</span>
-            SUB <span class="m">6</span> DIV NEG <span class="m">2</span> DIV EXP DUP SUM <span class="nv">DIV</span> <span class="o">=</span> gfilter.nc
-gmt grdfilter ripples.nc -Ffgfilter.nc -D0 -Gsmooth.nc -V
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>grdmath<span class="w"> </span>-R-10/10/-10/10<span class="w"> </span>-I1<span class="w"> </span>X<span class="w"> </span><span class="m">2</span><span class="w"> </span>POW<span class="w"> </span><span class="m">2</span><span class="w"> </span>MUL<span class="w"> </span>Y<span class="w"> </span><span class="m">2</span><span class="w"> </span>POW<span class="w"> </span>ADD<span class="w"> </span>X<span class="w"> </span>Y<span class="w"> </span>MUL<span class="w"> </span><span class="m">2</span><span class="w"> </span>MUL<span class="w"> </span><span class="se">\</span>
+<span class="w">            </span>SUB<span class="w"> </span><span class="m">6</span><span class="w"> </span>DIV<span class="w"> </span>NEG<span class="w"> </span><span class="m">2</span><span class="w"> </span>DIV<span class="w"> </span>EXP<span class="w"> </span>DUP<span class="w"> </span>SUM<span class="w"> </span><span class="nv">DIV</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>gfilter.nc
+gmt<span class="w"> </span>grdfilter<span class="w"> </span>ripples.nc<span class="w"> </span>-Ffgfilter.nc<span class="w"> </span>-D0<span class="w"> </span>-Gsmooth.nc<span class="w"> </span>-V
 </pre></div>
 </div>
-</div></blockquote>
 </section>
 <section id="limitations">
 <h2>Limitations<a class="headerlink" href="#limitations" title="Permalink to this heading">¶</a></h2>
@@ -438,7 +437,7 @@ gmt grdfilter ripples.nc -Ffgfilter.nc -D0 -Gsmooth.nc -V
 <li><p>To use the <strong>-D</strong>5 option the input Mercator grid must be created by
 img2mercgrd using the <a class="reference internal" href="#c"><span><strong>-C</strong></span></a></strong> option so the origin of the y-values is the
 Equator (i.e., x = y = 0 correspond to lon = lat = 0).</p></li>
-<li><p>If the new <em>x_inc</em>, <em>y_inc</em> set with <a class="reference internal" href="#i"><span><strong>-I</strong></span></a></strong> are NOT integer multiples
+<li><p>If the new <em>x_inc</em>, <em>y_inc</em> set with <a class="reference internal" href="#i"><span><strong>-I</strong></span></a></strong> are <strong>not</strong> integer multiples
 of the increments in the input data, filtering will be considerably slower.
 [Default increments: Same as input.]</p></li>
 </ol>
@@ -460,8 +459,8 @@ of the increments in the input data, filtering will be considerably slower.
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2022, The GMT Team.
-      <span class="lastupdated">Last updated on Jun 14, 2022.
+    <p>&#169; Copyright 2023, The GMT Team.
+      <span class="lastupdated">Last updated on Jun 10, 2023.
       </span></p>
   </div>
 

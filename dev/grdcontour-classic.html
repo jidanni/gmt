@@ -2,28 +2,29 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>grdcontour &mdash; GMT 6.4.0 documentation</title>
+  <title>grdcontour &mdash; GMT 6.5.0 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/togglebutton.css" type="text/css" />
       <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
-      <link rel="stylesheet" href="_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
       <link rel="stylesheet" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
+      <link rel="stylesheet" href="_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
       <link rel="stylesheet" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
       <link rel="stylesheet" href="_static/style.css" type="text/css" />
     <link rel="shortcut icon" href="_static/favicon.png"/>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
         <script src="_static/clipboard.min.js"></script>
         <script src="_static/copybutton.js"></script>
         <script>let toggleHintShow = 'Click to show example script';</script>
@@ -49,14 +50,18 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="index.html" class="icon icon-home"> GMT
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            GMT
           </a>
               <div class="version">
-                6.4
+                6.5
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -93,7 +98,7 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Development</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CODE_OF_CONDUCT.md">Code of Conduct</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/.github/blob/main/CODE_OF_CONDUCT.md">Code of Conduct</a></li>
 <li class="toctree-l1"><a class="reference internal" href="devdocs/contributing.html">Contributors Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="devdocs/maintenance.html">Maintainers Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="devdocs/team.html">Team Gallery</a></li>
@@ -135,9 +140,9 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="modules-classic.html">Modules (Classic Mode)</a> &raquo;</li>
-      <li>grdcontour</li>
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules-classic.html">Modules (Classic Mode)</a></li>
+      <li class="breadcrumb-item active">grdcontour</li>
       <li class="wy-breadcrumbs-aside">
               <a href="https://github.com/GenericMappingTools/gmt/edit/master/doc/rst/source/grdcontour-classic.rst" class="fa fa-github"> Edit on GitHub</a>
       </li>
@@ -243,8 +248,11 @@ the workings of the contour line setup.</p>
 </dd>
 <dt><strong>+e</strong></dt><dd><p>Delay the plotting of the text. This is used to build a clip path
 based on the text, then lay down other overlays while that clip path
-is in effect, then turning off clipping with clip <strong>-Cs</strong> which
-finally plots the original text.</p>
+is in effect, then turning off clipping with <a class="reference internal" href="clip.html"><span class="doc">clip</span></a> <strong>-C</strong> which
+finally plots the original text. Note that the clip path may
+truncate other regions where there is no text overlap. Double check
+to ensure the correct result is obtained as expected. Carefully selecting
+the right place to run <a class="reference internal" href="clip.html"><span class="doc">clip</span></a> manually after each use of <strong>+e</strong> is recommended.</p>
 </dd>
 <dt><strong>+f</strong><em>font</em></dt><dd><p>Sets the desired font [Default <a class="reference internal" href="gmt.conf.html#term-FONT_ANNOT_PRIMARY"><span class="xref std std-term">FONT_ANNOT_PRIMARY</span></a> with its
 size changed to 9p].</p>
@@ -255,7 +263,7 @@ specify the color [Default is <a class="reference internal" href="gmt.conf.html#
 <dt><strong>+i</strong></dt><dd><p>Invisible lines (i.e., hide the lines) [Default draws the lines]. This may be useful if all you want
 is to see annotations and labels and not the lines that guides them.</p>
 </dd>
-<dt><strong>+j</strong><em>just</em></dt><dd><p>Sets label justification relative to the line center point [Default is MC].</p>
+<dt><strong>+j</strong><em>just</em></dt><dd><p>Sets label justification relative to the line center point [Default is <strong>MC</strong>].</p>
 </dd>
 <dt><strong>+n</strong><em>dx</em>[/<em>dy</em>]</dt><dd><p>Nudges the placement of labels by the specified amount (append
 <strong>c</strong>|<strong>i</strong>|<strong>p</strong> to specify the units). Increments
@@ -333,18 +341,23 @@ nor <a class="reference internal" href="#a"><span><strong>-A</strong></span></a>
 intervals from the data range, yielding approximately 10-20 contours.</p>
 </dd>
 </dl>
-<dl class="simple" id="d">
-<dt><strong>-D</strong><em>template</em></dt><dd><p>Dump contours as data line segments; no plotting takes place.
-Append filename template which may contain C-format specifiers.
+<dl id="d">
+<dt><strong>-D</strong><em>template</em></dt><dd><p>Dump contours as data line segments.
+No plotting takes place.
+Append filename template which may contain C language
+<a class="reference external" href="https://en.wikipedia.org/wiki/Printf_format_string">printf</a> format specifiers.
 If no filename template is given we write all lines to standard output.
-If filename has no specifiers then we write all lines to a single file.
-If a float format (e.g., %6.2f) is found we substitute the contour z-value.
-If an integer format (e.g., %06d) is found we substitute a running segment count.
-If an char format (%c) is found we substitute C or O for closed and open contours.
-The 1-3 specifiers may be combined and appear in any order to produce the
-the desired number of output files (e.g., just %c gives two files, just %f would.
-separate segments into one file per contour level, and %d would write all segments.
-to individual files; see manual page for more examples.</p>
+If filename has no specifiers then we write all lines to a single file.</p>
+<ul class="simple">
+<li><p>If a float format (e.g., %6.2f) is found we substitute the contour z-value.</p></li>
+<li><p>If an integer format (e.g., %06d) is found we substitute a running segment count.</p></li>
+<li><p>If an char format (%c) is found we substitute C or O for closed and open contours.</p></li>
+</ul>
+<p>The 1-3 specifiers may be combined and appear in any order to produce the
+the desired number of output files.</p>
+<p>E.g., just %c gives two files, just %f would
+separate segments into one file per contour level, and %d would write all segments
+to individual files. See <a class="reference external" href="https://linux.die.net/man/3/printf">printf(3)</a> for more examples.</p>
 </dd>
 </dl>
 <dl class="simple" id="f">
@@ -379,7 +392,7 @@ where these lines intersect the quoted lines. The format of each
 <em>line</em> specification is <em>start/stop</em>, where <em>start</em> and <em>stop</em>
 are either a specified point <em>lon/lat</em> or a 2-character <strong>XY</strong>
 key that uses the justification format employed in <a class="reference internal" href="text.html"><span class="doc">text</span></a> to
-indicate a point on the map, given as [LCR][BMT].
+indicate a point on the map, given as [<strong>LCR</strong>][<strong>BMT</strong>].
 In addition, you can use Z-, Z+ to mean the global minimum and
 maximum locations in the grid. <strong>L</strong> will interpret the point pairs
 as defining great circles [Default is straight line].</p>
@@ -458,7 +471,7 @@ is used to position the label.</p>
 </dd>
 </dl>
 <dl class="simple" id="u">
-<dt><strong>-U</strong>[<em>label</em>|<strong>+c</strong>][<strong>+j</strong><em>just</em>][<strong>+o</strong><em>dx</em>[/<em>dy</em>]]</dt><dd><p>Draw GMT time stamp logo on plot. <a class="reference internal" href="gmt.html#u-full"><span class="std std-ref">(See full description)</span></a> <a class="reference internal" href="cookbook/options.html#timestamps-on-plots-the-u-option"><span class="std std-ref">(See cookbook information)</span></a>.</p>
+<dt><strong>-U</strong>[<em>label</em>|<strong>+c</strong>][<strong>+j</strong><em>just</em>][<strong>+o</strong><em>dx</em>[/<em>dy</em>]][<strong>+t</strong><em>text</em>]</dt><dd><p>Draw GMT time stamp logo on plot. <a class="reference internal" href="gmt.html#u-full"><span class="std std-ref">(See full description)</span></a> <a class="reference internal" href="cookbook/options.html#timestamps-on-plots-the-u-option"><span class="std std-ref">(See cookbook information)</span></a>.</p>
 </dd>
 </dl>
 <dl class="simple" id="v">
@@ -595,13 +608,13 @@ of uses that are common but cannot be run verbatim as written.</p>
 0.5 inch/degree, annotate every 50 mGal (using fontsize = 10p), using 1
 degree tickmarks, and draw 30 minute gridlines:</p>
 <blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdcontour hawaii_grav.nc -Jm0.5i -C25 -A50+f10p -B1g30m &gt; hawaii_grav.ps
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>grdcontour<span class="w"> </span>hawaii_grav.nc<span class="w"> </span>-Jm0.5i<span class="w"> </span>-C25<span class="w"> </span>-A50+f10p<span class="w"> </span>-B1g30m<span class="w"> </span>&gt;<span class="w"> </span>hawaii_grav.ps
 </pre></div>
 </div>
 </div></blockquote>
 <p>To do the same map but only draw the 50 and 150 and annotate the 100 contour:</p>
 <blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdcontour hawaii_grav.nc -Jm0.5i -C50.150 -A100,+f10p -B1g30m &gt; hawaii_grav.ps
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>grdcontour<span class="w"> </span>hawaii_grav.nc<span class="w"> </span>-Jm0.5i<span class="w"> </span>-C50.150<span class="w"> </span>-A100,+f10p<span class="w"> </span>-B1g30m<span class="w"> </span>&gt;<span class="w"> </span>hawaii_grav.ps
 </pre></div>
 </div>
 </div></blockquote>
@@ -611,8 +624,8 @@ linear projection at 0.1 cm/x-unit and 50 cm/y-unit, using 20 (x) and
 plot-title, use a thick red pen for annotated contours, and a thin,
 dashed, blue pen for the rest, and send the output to the default printer:</p>
 <blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdcontour image.nc -Jx0.1c/50.0c -Ccont.txt -S4 -Bx20 -By0.1 <span class="se">\</span>
-           -B+t<span class="s2">&quot;RMS Misfit&quot;</span> -Wathick,red -Wcthinnest,blue,- <span class="p">|</span> lp
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>grdcontour<span class="w"> </span>image.nc<span class="w"> </span>-Jx0.1c/50.0c<span class="w"> </span>-Ccont.txt<span class="w"> </span>-S4<span class="w"> </span>-Bx20<span class="w"> </span>-By0.1<span class="w"> </span><span class="se">\</span>
+<span class="w">           </span>-B+t<span class="s2">&quot;RMS Misfit&quot;</span><span class="w"> </span>-Wathick,red<span class="w"> </span>-Wcthinnest,blue,-<span class="w"> </span><span class="p">|</span><span class="w"> </span>lp
 </pre></div>
 </div>
 </div></blockquote>
@@ -623,7 +636,7 @@ position the label.</p>
 into two multisegment files: contours_C.txt for closed and
 contours_O.txt for open contours, try</p>
 <blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdcontour topo.nc -C100 -S4 -Dcontours_%c.txt
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>grdcontour<span class="w"> </span>topo.nc<span class="w"> </span>-C100<span class="w"> </span>-S4<span class="w"> </span>-Dcontours_%c.txt
 </pre></div>
 </div>
 </div></blockquote>
@@ -649,8 +662,8 @@ contours_O.txt for open contours, try</p>
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2022, The GMT Team.
-      <span class="lastupdated">Last updated on Jun 14, 2022.
+    <p>&#169; Copyright 2023, The GMT Team.
+      <span class="lastupdated">Last updated on Jun 10, 2023.
       </span></p>
   </div>
 

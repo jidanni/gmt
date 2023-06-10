@@ -2,28 +2,29 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>mgd77manage &mdash; GMT 6.4.0 documentation</title>
+  <title>mgd77manage &mdash; GMT 6.5.0 documentation</title>
       <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/togglebutton.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/copybutton.css" type="text/css" />
-      <link rel="stylesheet" href="../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
       <link rel="stylesheet" href="../../_static/style.css" type="text/css" />
     <link rel="shortcut icon" href="../../_static/favicon.png"/>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    
   <!--[if lt IE 9]>
     <script src="../../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
         <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-        <script src="../../_static/jquery.js"></script>
-        <script src="../../_static/underscore.js"></script>
-        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
         <script src="../../_static/clipboard.min.js"></script>
         <script src="../../_static/copybutton.js"></script>
         <script>let toggleHintShow = 'Click to show example script';</script>
@@ -49,14 +50,18 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../../index.html" class="icon icon-home"> GMT
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            GMT
           </a>
               <div class="version">
-                6.4
+                6.5
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -93,7 +98,7 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Development</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CODE_OF_CONDUCT.md">Code of Conduct</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/.github/blob/main/CODE_OF_CONDUCT.md">Code of Conduct</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../devdocs/contributing.html">Contributors Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../devdocs/maintenance.html">Maintainers Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../devdocs/team.html">Team Gallery</a></li>
@@ -135,9 +140,9 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="../../modules.html">Modules</a> &raquo;</li>
-      <li>mgd77manage</li>
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../modules.html">Modules</a></li>
+      <li class="breadcrumb-item active">mgd77manage</li>
       <li class="wy-breadcrumbs-aside">
               <a href="https://github.com/GenericMappingTools/gmt/edit/master/doc/rst/source/supplements/mgd77/mgd77manage.rst" class="fa fa-github"> Edit on GitHub</a>
       </li>
@@ -294,7 +299,7 @@ times.</p>
 </dl>
 <dl class="simple" id="d">
 <dt><strong>-D</strong><em>abbrev1</em>,<em>abbrev2</em>,…)</dt><dd><p>Give a comma-separated list of column abbreviations that you want to
-delete from the MGD77+ files. Do NOT use this option to remove
+delete from the MGD77+ files. Do <strong>not</strong> use this option to remove
 columns that you are replacing with new data (use <strong>-A…+f</strong> instead).
 Because we cannot remove variables from netCDF files we must create
 a new file without the columns to be deleted. Once the file is
@@ -401,36 +406,28 @@ your <strong>-n</strong> option.</p>
 <p>To append Geosat/ERS-1 gravity version 11.2 as an extra data column in
 the cruises 01010047.nc and 01010008.nc, storing the values as mGal*10
 in a 2-byte short integer, try</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt mgd77manage <span class="m">01010047</span> <span class="m">01010008</span> -Ai10/1/grav.11.2.img <span class="se">\</span>
-    -Isatgrav/<span class="s2">&quot;Geosat/ERS-1 gravity&quot;</span>/<span class="s2">&quot;mGal&quot;</span>/s/10/0/<span class="s2">&quot;Sandwell/Smith version 11.2&quot;</span> -V
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>mgd77manage<span class="w"> </span><span class="m">01010047</span><span class="w"> </span><span class="m">01010008</span><span class="w"> </span>-Ai10/1/grav.11.2.img<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>-Isatgrav/<span class="s2">&quot;Geosat/ERS-1 gravity&quot;</span>/<span class="s2">&quot;mGal&quot;</span>/s/10/0/<span class="s2">&quot;Sandwell/Smith version 11.2&quot;</span><span class="w"> </span>-V
 </pre></div>
 </div>
-</div></blockquote>
 <p>To append a filtered version of magnetics as an extra data column of
 type float for the cruise 01010047.nc, and interpolate the filtered data
 at the times given in the MGD77+ file, try</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt mgd77manage <span class="m">01010047</span> -ATmymag.tm -Ifiltmag/<span class="s2">&quot;Intermediate-wavelength \</span>
-<span class="s2">    magnetic residuals&quot;</span>/<span class="s2">&quot;nTesla&quot;</span>/f/1/0/<span class="s2">&quot;Useful for looking for isochrons&quot;</span> -V
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>mgd77manage<span class="w"> </span><span class="m">01010047</span><span class="w"> </span>-ATmymag.tm<span class="w"> </span>-Ifiltmag/<span class="s2">&quot;Intermediate-wavelength \</span>
+<span class="s2">    magnetic residuals&quot;</span>/<span class="s2">&quot;nTesla&quot;</span>/f/1/0/<span class="s2">&quot;Useful for looking for isochrons&quot;</span><span class="w"> </span>-V
 </pre></div>
 </div>
-</div></blockquote>
 <p>To delete the existing extra columns satfaa, coastdist, and satvgg from
 all MGD77+ files, try</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt <span class="nv">mgd77manage</span> <span class="o">=</span>allmgd77.lis -Dsatfaa,coastdist,satvgg -V
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span><span class="nv">mgd77manage</span><span class="w"> </span><span class="o">=</span>allmgd77.lis<span class="w"> </span>-Dsatfaa,coastdist,satvgg<span class="w"> </span>-V
 </pre></div>
 </div>
-</div></blockquote>
 <p>To create a 4-byte float column with the correct IGRF reference field in
 all MGD77+ files, try</p>
-<blockquote>
-<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt <span class="nv">mgd77manage</span> <span class="o">=</span>allmgd77.lis -Acm -Iigrf/<span class="s2">&quot;IGRF reference \</span>
-<span class="s2">    field&quot;</span>/<span class="s2">&quot;nTesla&quot;</span>/f/1/0/<span class="s2">&quot;IGRF version 10 for 1990-2010&quot;</span> -V
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span><span class="nv">mgd77manage</span><span class="w"> </span><span class="o">=</span>allmgd77.lis<span class="w"> </span>-Acm<span class="w"> </span>-Iigrf/<span class="s2">&quot;IGRF reference \</span>
+<span class="s2">    field&quot;</span>/<span class="s2">&quot;nTesla&quot;</span>/f/1/0/<span class="s2">&quot;IGRF version 10 for 1990-2010&quot;</span><span class="w"> </span>-V
 </pre></div>
 </div>
-</div></blockquote>
 </section>
 <section id="discussion">
 <h2>Discussion<a class="headerlink" href="#discussion" title="Permalink to this heading">¶</a></h2>
@@ -536,7 +533,7 @@ suppressed from output.</p>
 </section>
 <section id="credits">
 <h2>Credits<a class="headerlink" href="#credits" title="Permalink to this heading">¶</a></h2>
-<p>The IGRF calculations are based on a Fortran program written by Susan
+<p>The IGRF calculations are based on a FORTRAN program written by Susan
 Macmillan, British Geological Survey, translated to C via f2c by Joaquim
 Luis, and adapted to GMT style by Paul Wessel.</p>
 </section>
@@ -570,8 +567,8 @@ Luis, and adapted to GMT style by Paul Wessel.</p>
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2022, The GMT Team.
-      <span class="lastupdated">Last updated on Jun 14, 2022.
+    <p>&#169; Copyright 2023, The GMT Team.
+      <span class="lastupdated">Last updated on Jun 10, 2023.
       </span></p>
   </div>
 

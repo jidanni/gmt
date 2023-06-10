@@ -2,28 +2,29 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>grdimage &mdash; GMT 6.4.0 documentation</title>
+  <title>grdimage &mdash; GMT 6.5.0 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/togglebutton.css" type="text/css" />
       <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
-      <link rel="stylesheet" href="_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
       <link rel="stylesheet" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
+      <link rel="stylesheet" href="_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
       <link rel="stylesheet" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
       <link rel="stylesheet" href="_static/style.css" type="text/css" />
     <link rel="shortcut icon" href="_static/favicon.png"/>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
         <script src="_static/clipboard.min.js"></script>
         <script src="_static/copybutton.js"></script>
         <script>let toggleHintShow = 'Click to show example script';</script>
@@ -49,14 +50,18 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="index.html" class="icon icon-home"> GMT
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            GMT
           </a>
               <div class="version">
-                6.4
+                6.5
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -93,7 +98,7 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Development</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CODE_OF_CONDUCT.md">Code of Conduct</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/.github/blob/main/CODE_OF_CONDUCT.md">Code of Conduct</a></li>
 <li class="toctree-l1"><a class="reference internal" href="devdocs/contributing.html">Contributors Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="devdocs/maintenance.html">Maintainers Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="devdocs/team.html">Team Gallery</a></li>
@@ -135,9 +140,9 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="modules.html">Modules</a> &raquo;</li>
-      <li>grdimage</li>
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">Modules</a></li>
+      <li class="breadcrumb-item active">grdimage</li>
       <li class="wy-breadcrumbs-aside">
               <a href="https://github.com/GenericMappingTools/gmt/edit/master/doc/rst/source/grdimage.rst" class="fa fa-github"> Edit on GitHub</a>
       </li>
@@ -165,6 +170,7 @@
 [ <a class="reference internal" href="#n"><span><strong>-N</strong></span></a></strong> ]
 [ <a class="reference internal" href="#q"><span><strong>-Q</strong></span></a></strong>[<em>color</em>][<strong>+z</strong><em>value</em>] ]
 [ <a class="reference internal" href="#r"><span><strong>-R</strong></span></a></strong><em>west</em>/<em>east</em>/<em>south</em>/<em>north</em>[/<em>zmin</em>/<em>zmax</em>][<strong>+r</strong>][<strong>+u</strong><em>unit</em>] ]
+[ <a class="reference internal" href="#t"><span><strong>-T</strong></span></a></strong>[<strong>+o</strong>[<em>pen</em>]][<strong>+s</strong>] ]
 [ <a class="reference internal" href="#u"><span><strong>-U</strong></span></a></strong>[<em>stamp</em>] ]
 [ <a class="reference internal" href="#v"><span><strong>-V</strong></span></a></strong>[<em>level</em>] ]
 [ <a class="reference internal" href="#x"><span><strong>-X</strong></span></a></strong>[<strong>a</strong>|<strong>c</strong>|<strong>f</strong>|<strong>r</strong>][<em>xshift</em>] ]
@@ -289,7 +295,7 @@ default arguments (<strong>+a</strong>-45<strong>+nt</strong>1<strong>+m</strong
 specific intensity scenario then run <a class="reference internal" href="grdgradient.html"><span class="doc">grdgradient</span></a> separately first.
 If we should derive intensities from another file than <em>grid</em>, specify the
 file with suitable modifiers [Default is no illumination].  <strong>Note</strong>: If
-the input data is an <em>image</em> then an <em>intensfile</em> or constant <em>intensity</em>
+the input data represent an <em>image</em> then an <em>intensfile</em> or constant <em>intensity</em>
 must be provided.</p>
 </dd>
 </dl>
@@ -304,11 +310,11 @@ non-rectangular maps).</p>
 </dd>
 </dl>
 <dl class="simple" id="q">
-<dt><strong>-Q</strong>[<em>color</em>][<strong>+z</strong><em>value</em>]</dt><dd><p>Make grid nodes with NaN values transparent, using the color-masking
+<dt><strong>-Q</strong>[<strong>+z</strong><em>value</em>][<em>color</em>]</dt><dd><p>Make grid nodes with NaN values transparent, using the color-masking
 feature in PostScript Level 3 (the PS device must support PS Level 3).
-Use <strong>+z</strong> to select another grid value than NaN.
-If input is instead an image then black pixels are set to be transparent;
-append an alternate color to select another pixel value to be transparent.</p>
+If the input is a grid, use <strong>+z</strong> to select another grid value than NaN.
+If input is instead an image, append an alternate color to select another
+pixel value to be transparent [Default is black].</p>
 </dd>
 </dl>
 <dl class="simple" id="r">
@@ -321,8 +327,18 @@ append an alternate color to select another pixel value to be transparent.</p>
 smaller region than specified in the grid file will result in a
 subset of the grid [Default is the region given by the grid file].</p>
 </div></blockquote>
+<dl class="simple" id="t">
+<dt><strong>-T</strong>[<strong>+o</strong>[<em>pen</em>]][<strong>+s</strong>]</dt><dd><p>Plot a data grid without any interpolation. This involves converting each
+node-centered bin into a polygon which is then painted separately.
+Append <strong>+s</strong> to skip nodes with z = NaN. This option is suitable for
+categorical data where interpolating between values is meaningless
+and a categorical CPT has been provided via <a class="reference internal" href="#c"><span><strong>-C</strong></span></a></strong>.
+Optionally, append <strong>+o</strong> to draw the tile outlines, and specify a
+custom pen if the default pen is not to your liking.</p>
+</dd>
+</dl>
 <dl class="simple" id="u">
-<dt><strong>-U</strong>[<em>label</em>|<strong>+c</strong>][<strong>+j</strong><em>just</em>][<strong>+o</strong><em>dx</em>[/<em>dy</em>]]</dt><dd><p>Draw GMT time stamp logo on plot. <a class="reference internal" href="gmt.html#u-full"><span class="std std-ref">(See full description)</span></a> <a class="reference internal" href="cookbook/options.html#timestamps-on-plots-the-u-option"><span class="std std-ref">(See cookbook information)</span></a>.</p>
+<dt><strong>-U</strong>[<em>label</em>|<strong>+c</strong>][<strong>+j</strong><em>just</em>][<strong>+o</strong><em>dx</em>[/<em>dy</em>]][<strong>+t</strong><em>text</em>]</dt><dd><p>Draw GMT time stamp logo on plot. <a class="reference internal" href="gmt.html#u-full"><span class="std std-ref">(See full description)</span></a> <a class="reference internal" href="cookbook/options.html#timestamps-on-plots-the-u-option"><span class="std std-ref">(See cookbook information)</span></a>.</p>
 </dd>
 </dl>
 <dl class="simple" id="v">
@@ -377,7 +393,7 @@ place with most map projections. Because <strong>grdimage</strong> uses the
 PostScript colorimage operator, for most non-linear projections we
 must resample your grid onto an equidistant rectangular lattice. If you
 find that the NaN areas are not treated adequately, consider (a) use a
-linear projection, or (b) use <a class="reference internal" href="grdview.html"><span class="doc">grdview</span></a> <strong>-Ts</strong> instead.</p>
+linear projection, or (b) use <strong>-T+s</strong> instead to plot graticule polygons.</p>
 </section>
 <section id="consequences-of-grid-resampling">
 <h2>Consequences of grid resampling<a class="headerlink" href="#consequences-of-grid-resampling" title="Permalink to this heading">¶</a></h2>
@@ -404,7 +420,7 @@ requires a resampling onto an equidistant Cartesian lattice that usually
 will result in such blending.  We do not know if a grid is categorical but
 if the CPT provided via <a class="reference internal" href="#c"><span><strong>-C</strong></span></a></strong> is categorical we will override any <strong>-n</strong> setting you
 have chosen (perhaps implicitly) with <strong>-nn+a</strong> that turns <em>on</em> nearest neighbor
-gridding and turns <em>off</em> anti-aliasing.  Alternatively, use <a class="reference internal" href="grdview.html"><span class="doc">grdview</span></a> <a class="reference internal" href="#t"><span><strong>-T</strong></span></a></strong>
+gridding and turns <em>off</em> anti-aliasing.  Alternatively, use <a class="reference internal" href="#t"><span><strong>-T</strong></span></a></strong>
 instead to plot individual polygons centered on each node.</p>
 </section>
 <section id="image-formats-recognized">
@@ -436,32 +452,26 @@ of uses that are common but cannot be run verbatim as written.</p>
 modern mode <a class="reference internal" href="cookbook/one-liner.html"><span class="doc">GMT Modern Mode One-line Commands</span></a> syntax, which simplifies such short scripts.</p>
 <p>For a quick-and-dirty illuminated color map of the data in the remote file
 &#64;AK_gulf_grav.nc, try:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdimage @AK_gulf_grav.nc -I+d -B -pdf quick
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>grdimage<span class="w"> </span>@AK_gulf_grav.nc<span class="w"> </span>-I+d<span class="w"> </span>-B<span class="w"> </span>-pdf<span class="w"> </span>quick
 </pre></div>
 </div>
 <p>To gray-shade the file AK_gulf_grav.nc on a Lambert map at 1.5 cm/degree
 along the standard parallels 18 and 24, centered on (142W, 55N), try:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin alaska_gray
-  gmt grd2cpt -Cgray @AK_gulf_grav.nc
-  gmt grdimage @AK_gulf_grav.nc -Jl142W/55N/18/24/1.5c -B
-gmt end show
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>begin<span class="w"> </span>alaska_gray
+<span class="w">  </span>gmt<span class="w"> </span>grd2cpt<span class="w"> </span>-Cgray<span class="w"> </span>@AK_gulf_grav.nc
+<span class="w">  </span>gmt<span class="w"> </span>grdimage<span class="w"> </span>@AK_gulf_grav.nc<span class="w"> </span>-Jl142W/55N/18/24/1.5c<span class="w"> </span>-B
+gmt<span class="w"> </span>end<span class="w"> </span>show
 </pre></div>
 </div>
 <p>To create an illuminated color plot of the gridded data set
 image.nc, using the intensities provided by the file intens.nc, and
 color levels in the file colors.cpt, with linear scaling at 10
 inch/x-unit, tickmarks every 5 units:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdimage image.nc -Jx10i -Ccolors.cpt -Iintens.nc -B5 -pdf image
-</pre></div>
-</div>
-<p>To create an false color plot from the three grid files
-red.nc, green.nc, and blue.nc, with linear scaling at 10 inch/x-unit,
-tickmarks every 5 units:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdimage red.nc green.nc blue.nc -Jx10i -B5 -pdf rgbimage
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>grdimage<span class="w"> </span>image.nc<span class="w"> </span>-Jx10i<span class="w"> </span>-Ccolors.cpt<span class="w"> </span>-Iintens.nc<span class="w"> </span>-B5<span class="w"> </span>-pdf<span class="w"> </span>image
 </pre></div>
 </div>
 <p>To create a sinusoidal projection of a remotely located Jessica Rabbit:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt grdimage -JI15c -Rd http://larryfire.files.wordpress.com/2009/07/untooned_jessicarabbit.jpg -pdf jess
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>grdimage<span class="w"> </span>-JI15c<span class="w"> </span>-Rd<span class="w"> </span>http://larryfire.files.wordpress.com/2009/07/untooned_jessicarabbit.jpg<span class="w"> </span>-pdf<span class="w"> </span>jess
 </pre></div>
 </div>
 </section>
@@ -515,8 +525,8 @@ CPTs.</p>
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2022, The GMT Team.
-      <span class="lastupdated">Last updated on Jun 14, 2022.
+    <p>&#169; Copyright 2023, The GMT Team.
+      <span class="lastupdated">Last updated on Jun 10, 2023.
       </span></p>
   </div>
 

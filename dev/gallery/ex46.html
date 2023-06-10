@@ -2,28 +2,29 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>(46) Day-light terminators and other sunlight parameters &mdash; GMT 6.4.0 documentation</title>
+  <title>(46) Day-light terminators and other sunlight parameters &mdash; GMT 6.5.0 documentation</title>
       <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="../_static/togglebutton.css" type="text/css" />
       <link rel="stylesheet" href="../_static/copybutton.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
       <link rel="stylesheet" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
       <link rel="stylesheet" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
       <link rel="stylesheet" href="../_static/style.css" type="text/css" />
     <link rel="shortcut icon" href="../_static/favicon.png"/>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
+        <script src="../_static/sphinx_highlight.js"></script>
         <script src="../_static/clipboard.min.js"></script>
         <script src="../_static/copybutton.js"></script>
         <script>let toggleHintShow = 'Click to show example script';</script>
@@ -49,14 +50,18 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../index.html" class="icon icon-home"> GMT
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            GMT
           </a>
               <div class="version">
-                6.4
+                6.5
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -93,7 +98,7 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Development</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CODE_OF_CONDUCT.md">Code of Conduct</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/.github/blob/main/CODE_OF_CONDUCT.md">Code of Conduct</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../devdocs/contributing.html">Contributors Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../devdocs/maintenance.html">Maintainers Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../devdocs/team.html">Team Gallery</a></li>
@@ -135,9 +140,9 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="../gallery.html">Illustration Gallery</a> &raquo;</li>
-      <li>(46) Day-light terminators and other sunlight parameters</li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../gallery.html">Illustration Gallery</a></li>
+      <li class="breadcrumb-item active">(46) Day-light terminators and other sunlight parameters</li>
       <li class="wy-breadcrumbs-aside">
               <a href="https://github.com/GenericMappingTools/gmt/edit/master/doc/rst/source/gallery/ex46.rst" class="fa fa-github"> Edit on GitHub</a>
       </li>
@@ -161,14 +166,14 @@ to be plotted with <a class="reference internal" href="../plot.html"><span class
 <span class="c1"># GMT modules:  solar, coast, plot</span>
 <span class="c1">#</span>
 
-gmt begin ex46
-	gmt coast -Rd -JKs0/25c -A5000 -W0.5p -N1/0.5p,gray -S175/210/255 -Bafg --MAP_FRAME_TYPE<span class="o">=</span>plain
-	gmt solar -Td+d2016-02-09T16:00:00 -Gnavy@95
-	gmt solar -Tc+d2016-02-09T16:00:00 -Gnavy@85
-	gmt solar -Tn+d2016-02-09T16:00:00 -Gnavy@80
-	gmt solar -Ta+d2016-02-09T16:00:00 -Gnavy@80
-	gmt solar -I+d2016-02-09T16:00:00 -C <span class="p">|</span> gmt plot -Sk@sunglasses/1.5c
-gmt end show
+gmt<span class="w"> </span>begin<span class="w"> </span>ex46
+<span class="w">	</span>gmt<span class="w"> </span>coast<span class="w"> </span>-Rd<span class="w"> </span>-JKs0/25c<span class="w"> </span>-A5000<span class="w"> </span>-W0.5p<span class="w"> </span>-N1/0.5p,gray<span class="w"> </span>-S175/210/255<span class="w"> </span>-Bafg<span class="w"> </span>--MAP_FRAME_TYPE<span class="o">=</span>plain
+<span class="w">	</span>gmt<span class="w"> </span>solar<span class="w"> </span>-Td+d2016-02-09T16:00:00<span class="w"> </span>-Gnavy@95
+<span class="w">	</span>gmt<span class="w"> </span>solar<span class="w"> </span>-Tc+d2016-02-09T16:00:00<span class="w"> </span>-Gnavy@85
+<span class="w">	</span>gmt<span class="w"> </span>solar<span class="w"> </span>-Tn+d2016-02-09T16:00:00<span class="w"> </span>-Gnavy@80
+<span class="w">	</span>gmt<span class="w"> </span>solar<span class="w"> </span>-Ta+d2016-02-09T16:00:00<span class="w"> </span>-Gnavy@80
+<span class="w">	</span>gmt<span class="w"> </span>solar<span class="w"> </span>-I+d2016-02-09T16:00:00<span class="w"> </span>-C<span class="w"> </span><span class="p">|</span><span class="w"> </span>gmt<span class="w"> </span>plot<span class="w"> </span>-Sk@sunglasses/1.5c
+gmt<span class="w"> </span>end<span class="w"> </span>show
 </pre></div>
 </div>
 <figure class="align-center" id="id1">
@@ -190,8 +195,8 @@ gmt end show
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2022, The GMT Team.
-      <span class="lastupdated">Last updated on Jun 14, 2022.
+    <p>&#169; Copyright 2023, The GMT Team.
+      <span class="lastupdated">Last updated on Jun 10, 2023.
       </span></p>
   </div>
 

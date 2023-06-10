@@ -2,28 +2,29 @@
 <!DOCTYPE html>
 <html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>gmtbinstats &mdash; GMT 6.4.0 documentation</title>
+  <title>gmtbinstats &mdash; GMT 6.5.0 documentation</title>
       <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
       <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
       <link rel="stylesheet" href="_static/togglebutton.css" type="text/css" />
       <link rel="stylesheet" href="_static/copybutton.css" type="text/css" />
-      <link rel="stylesheet" href="_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
       <link rel="stylesheet" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" type="text/css" />
+      <link rel="stylesheet" href="_static/panels-bootstrap.5fd3999ee7762ccc51105388f4a9d115.css" type="text/css" />
       <link rel="stylesheet" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" type="text/css" />
       <link rel="stylesheet" href="_static/style.css" type="text/css" />
     <link rel="shortcut icon" href="_static/favicon.png"/>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    
   <!--[if lt IE 9]>
     <script src="_static/js/html5shiv.min.js"></script>
   <![endif]-->
   
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
         <script src="_static/clipboard.min.js"></script>
         <script src="_static/copybutton.js"></script>
         <script>let toggleHintShow = 'Click to show example script';</script>
@@ -50,14 +51,18 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="index.html" class="icon icon-home"> GMT
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            GMT
           </a>
               <div class="version">
-                6.4
+                6.5
               </div>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -94,7 +99,7 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Development</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/gmt/blob/master/CODE_OF_CONDUCT.md">Code of Conduct</a></li>
+<li class="toctree-l1"><a class="reference external" href="https://github.com/GenericMappingTools/.github/blob/main/CODE_OF_CONDUCT.md">Code of Conduct</a></li>
 <li class="toctree-l1"><a class="reference internal" href="devdocs/contributing.html">Contributors Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="devdocs/maintenance.html">Maintainers Guide</a></li>
 <li class="toctree-l1"><a class="reference internal" href="devdocs/team.html">Team Gallery</a></li>
@@ -136,9 +141,9 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-          <li><a href="modules.html">Modules</a> &raquo;</li>
-      <li>gmtbinstats</li>
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">Modules</a></li>
+      <li class="breadcrumb-item active">gmtbinstats</li>
       <li class="wy-breadcrumbs-aside">
               <a href="https://github.com/GenericMappingTools/gmt/edit/master/doc/rst/source/gmtbinstats.rst" class="fa fa-github"> Edit on GitHub</a>
       </li>
@@ -183,7 +188,7 @@
 <p><strong>gmtbinstats</strong> reads arbitrarily located (x,y[,z][,w]) points
 (2-4 columns) from standard input [or <em>table</em>] and for each
 node in the specified grid layout determines which points are
-within the given radius.  These point are then used in the
+within the given radius.  These points are then used in the
 calculation of the specified statistic. The results may be
 presented as is or may be normalized by the circle area to
 perhaps give density estimates.  Alternatively, select
@@ -194,7 +199,7 @@ hexagonal tiling instead or a rectangular grid layout.</p>
 <dl class="simple">
 <dt><em>table</em></dt><dd><p>A 2-4 column ASCII file(s) [or binary, see
 <strong>-bi</strong>] holding (x,y[,z][,w]) data values. You must use <a class="reference internal" href="#w"><span><strong>-W</strong></span></a></strong>
-to indicate that you have weights.  Only <strong>-Cn</strong> will accept 2 columns only.
+to indicate that you have weights.  Only <a class="reference internal" href="#c"><span><strong>-C</strong></span></a></strong><strong>n</strong> will accept 2 columns only.
 If no file is specified, <strong>gmtbinstats</strong> will read from standard input.</p>
 </dd>
 </dl>
@@ -204,9 +209,9 @@ are within <em>radius</em> distance of the node.  Select one of <strong>a</stron
 <strong>d</strong> for median absolute deviation (MAD), <strong>g</strong> for full (max-min) range,
 <strong>i</strong> for 25-75% interquartile range, <strong>l</strong> for minimum (low),
 <strong>L</strong> for minimum of positive values only, <strong>m</strong> for median,
-<strong>n</strong> the number of values, <strong>o</strong> for LMS scale,
+<strong>n</strong> the number of values, <strong>o</strong> for least median square (LMS) scale,
 <strong>p</strong> for mode (maximum likelihood), <strong>q</strong> for selected quantile
-(append desired quantile in 0-100% range [50]), <strong>r</strong> for the r.m.s.,
+(append desired quantile in 0-100% range [50]), <strong>r</strong> for root mean square (RMS),
 <strong>s</strong> for standard deviation, <strong>u</strong> for maximum (upper),
 <strong>U</strong> for maximum of negative values only, or <strong>z</strong> for the sum.</p>
 </dd>
@@ -228,7 +233,7 @@ automatic scaling to preserve precision for integer grids [Default
 is 1].</p></li>
 </ul>
 </div></blockquote>
-<p>Note: Any offset is added before any scaling. <strong>+sa</strong> also sets <strong>+oa</strong>
+<p><strong>Note</strong>: Any offset is added before any scaling. <strong>+sa</strong> also sets <strong>+oa</strong>
 (unless overridden). To write specific formats via GDAL, use =<em>gd</em>
 and supply <em>driver</em> (and optionally <em>dataType</em>) and/or one or more
 concatenated GDAL <strong>-co</strong> options using <strong>+c</strong>. See
@@ -290,7 +295,7 @@ Not compatible with <a class="reference internal" href="#t"><span><strong>-T</st
 </dl>
 <dl class="simple" id="t">
 <dt><strong>-T</strong>[<strong>h</strong>|<strong>r</strong>]</dt><dd><p>Instead of circular, possibly overlapping areas, select non-overlapping tiling.  Choose between
-<strong>r</strong>ectangular <strong>h</strong>exagonal binning. For <strong>-Tr</strong>, set bin sizes via <a class="reference internal" href="#i"><span><strong>-I</strong></span></a></strong> and we write
+<strong>r</strong>ectangular and <strong>h</strong>exagonal binning. For <strong>-Tr</strong>, set bin sizes via <a class="reference internal" href="#i"><span><strong>-I</strong></span></a></strong> and we write
 the computed statistics to the grid file named in <a class="reference internal" href="#g"><span><strong>-G</strong></span></a></strong>.  For <strong>-Th</strong>, we write a table with
 the centers of the hexagons and the computed statistics to standard output (or to the file named
 in <a class="reference internal" href="#g"><span><strong>-G</strong></span></a></strong>).  Here, the <a class="reference internal" href="#i"><span><strong>-I</strong></span></a></strong> setting is expected to set the <em>y</em> increment only and we compute
@@ -307,8 +312,8 @@ fit a whole number of hexagons. <strong>Note</strong>: Hexagonal tiling requires
 <dt><strong>-W</strong>[<strong>+s</strong>]</dt><dd><p>Input data have an extra column containing observation point weight.
 If weights are given then weighted statistical quantities will be computed
 while the count will be the sum of the weights instead of number of points.
-If your weights are actually uncertainties (one sigma) then append <strong>+s</strong>
-and we compute weight = 1/sigma.</p>
+If your weights are actually uncertainties (<span class="math notranslate nohighlight">\(1\sigma\)</span>) then append <strong>+s</strong>
+and we compute weight = <span class="math notranslate nohighlight">\(\frac{1}{\sigma}\)</span>.</p>
 </dd>
 </dl>
 <dl class="simple">
@@ -403,15 +408,15 @@ Other commands requiring input files are just dummy examples of the types
 of uses that are common but cannot be run verbatim as written.</p>
 <p>To examine the population inside a circle of 1000 km radius for all nodes in a 5x5 arc degree grid,
 using the remote file &#64;capitals.gmt, and plot the resulting grid using default projection and colors, try:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt begin map
-  gmt gmtbinstats @capitals.gmt -a2<span class="o">=</span>population -Rg -I5 -Cz -Gpop.nc -S1000k
-  gmt grdimage pop.nc -B
-gmt end show
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>begin<span class="w"> </span>map
+<span class="w">  </span>gmt<span class="w"> </span>gmtbinstats<span class="w"> </span>@capitals.gmt<span class="w"> </span>-a2<span class="o">=</span>population<span class="w"> </span>-Rg<span class="w"> </span>-I5<span class="w"> </span>-Cz<span class="w"> </span>-Gpop.nc<span class="w"> </span>-S1000k
+<span class="w">  </span>gmt<span class="w"> </span>grdimage<span class="w"> </span>pop.nc<span class="w"> </span>-B
+gmt<span class="w"> </span>end<span class="w"> </span>show
 </pre></div>
 </div>
 <p>To do hexagonal binning of the data in the file mydata.txt and counting the number of points inside
 each hexagon, try:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt gmtbinstats mydata.txt -R0/5/0/3 -I1 -Th -Cn &gt; counts.txt
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gmt<span class="w"> </span>gmtbinstats<span class="w"> </span>mydata.txt<span class="w"> </span>-R0/5/0/3<span class="w"> </span>-I1<span class="w"> </span>-Th<span class="w"> </span>-Cn<span class="w"> </span>&gt;<span class="w"> </span>counts.txt
 </pre></div>
 </div>
 </section>
@@ -437,8 +442,8 @@ each hexagon, try:</p>
   <hr/>
 
   <div role="contentinfo">
-    <p>&#169; Copyright 2022, The GMT Team.
-      <span class="lastupdated">Last updated on Jun 14, 2022.
+    <p>&#169; Copyright 2023, The GMT Team.
+      <span class="lastupdated">Last updated on Jun 10, 2023.
       </span></p>
   </div>
 
